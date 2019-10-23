@@ -1,1 +1,5 @@
-site_name: My Docs
+site_name: Adminio
+theme:
+  name: 'material'
+  language: es
+  custom_dir: 'theme'

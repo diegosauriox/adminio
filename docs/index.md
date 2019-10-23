@@ -1,17 +1,11 @@
-# Welcome to MkDocs
+# Bienvenido a Adminio
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
+Adminio es una aplicación para la administración de condominios, concebida para resolver algunos grandes problemas en este ámbito en Chile.
 
-## Commands
+<img src="img/condominio.jpg" alt="Condominio" style="zoom: 20%;" />
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+# Introducción
+
+...
