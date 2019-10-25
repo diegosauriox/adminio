@@ -1,6 +1,34 @@
 # Selección de historias de usuario.
 
+
+
+## Historias seleccionadas.
+
+
+
+| N° de historia | Como           | Quiero                                                       | Para                                                         |
+| -------------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 1              | Propietario.   | Obtener el detalle mensual de mis gastos comunes.            | Conocer el monto de mi deuda.                                |
+| 2              | Propietario.   | Quiero obtener el detalle mensual del total de gastos comunes. | Justificar los montos que he de pagar.                       |
+| 7              | Propietario.   | Conocer el costo asociado al arriendo de los espacios comunes. | Evaluar si este se ajusta a mi presupuesto.                  |
+| 8              | Administrador. | Ver la lista de propietarios morosos.                        | Tomar acciones al respecto.                                  |
+| 9              | Administrador. | Registrar gastos comunes.                                    | informar a los propietarios de sus gastos comunes.           |
+| 11             | Administrador. | Actualizar datos de las propiedades.                         | Registrar cambios de propietarios.                           |
+| 12             | Administrador. | Registrar propiedades con sus atributos.                     | Tener control sobre ellas.                                   |
+| 15             | Administrador. | Configurar la forma en la que se reparten los gastos mensuales entre los propietarios. | Adecuar ésta a los estándares del condominio/edificio.       |
+| 21             | Administrador. | Eliminar una propiedad del registro.                         | Casos de equivocación al registrar o de fuerza mayor.        |
+| 22             | Administrador. | Modificar datos de los gastos comunes.                       | Actualizar estos.                                            |
+| 23             | Administrador. | Eliminar un gasto común.                                     | Casos de equivocación al registrar un gasto o ya tenerlo saldado. |
+| 26             | Administrador. | Registrar el pago de los propietarios.                       | Saldar las cuentas que se pagaron de forma presencial.       |
+
+
+
+## Justificación de selección de historias de usuario. 
+
+
+
 ### HU-1 - Obtener el detalle mensual de mis gastos comunes
+
 Al registrar los gastos comunes mensuales, el administrador distribuye estos en proporciones justas entre los propietarios, y se las notifica a cada uno de estos, por lo que es necesario que la plataforma presente los montos a los propietarios de tal manera que puedan conocer su deuda en particular para el posterior pago de esta.
 
 
