@@ -1,0 +1,3 @@
+#  Referencias
+
+1 - Gabriel Arce, (2016,Noviembre), El fantasma de los gastos comunes: radiografía al nuevo dolor de cabeza inmobiliario de los chilenos. [Online] disponible:[ https://www.publimetro.cl/cl/noticias/2018/11/06/el-fantasma-de-los-gastos-comunes-radiografia-al-dolor-de-cabeza-inmobiliario-de-los-chilenos.html](https://www.publimetro.cl/cl/noticias/2018/11/06/el-fantasma-de-los-gastos-comunes-radiografia-al-dolor-de-cabeza-inmobiliario-de-los-chilenos.html) 
