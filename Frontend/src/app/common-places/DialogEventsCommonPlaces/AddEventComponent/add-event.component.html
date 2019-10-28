@@ -1,0 +1,56 @@
+<form #form="ngForm" (ngSubmit)="addEvent()">
+  <mat-form-field floatLabel='auto'>
+    <mat-label>Titulo</mat-label>
+    <input matInput placeholder="Ingresar titulo" name="title" [(ngModel)]="newEvent.title" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Inicio</mat-label>
+    <div class="row">
+      <div class="col-sm">
+        <input matInput type="text" [matDatepicker]="picker"
+          [value]="this.data.dateMonth/this.data.dateDay/this.data.dateYear" placeholder="Choose a initial date">
+        <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+      <div class="col-sm">
+        <ngb-timepicker [formControl]="ctrl" size="small" required></ngb-timepicker>
+      </div>
+    </div>
+    <div *ngIf="ctrl.valid" class="small form-text text-success">Great choice</div>
+    <div class="small form-text text-danger" *ngIf="!ctrl.valid">
+      <div *ngIf="ctrl.errors['required']">Select some time during lunchtime</div>
+      <div *ngIf="ctrl.errors['tooLate']">Oh no, it's way too late</div>
+      <div *ngIf="ctrl.errors['tooEarly']">It's a bit too early</div>
+    </div>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label> Final</mat-label><br>
+    <input #input matInput type="text" [matDatepicker]="picker2" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker2">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+    <ngb-timepicker [formControl]="ctrl2" size="small" required></ngb-timepicker>
+    <div *ngIf="ctrl2.valid" class="small form-text text-success">Great choice</div>
+    <div class="small form-text text-danger" *ngIf="!ctrl2.valid">
+      <div *ngIf="ctrl2.errors['required']">Select some time during lunchtime</div>
+      <div *ngIf="ctrl2.errors['tooLate']">Oh no, it's way too late</div>
+    </div>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea matInput placeholder="Ingrese description"></textarea>
+  </mat-form-field>
+  <mat-form-field floatLabel='auto'>
+    <mat-select required>
+      <mat-option *ngFor="let house of data.houses" value="{{house.id}}">
+        {{house.name}}
+      </mat-option>
+    </mat-select>
+    <mat-label>Responsable</mat-label>
+  </mat-form-field>
+  <button type="submit" class="btn btn-success">Guardar</button>
+  <button (click)="onNoClick()" class="btn btn-danger">Cancelar</button>
+</form>

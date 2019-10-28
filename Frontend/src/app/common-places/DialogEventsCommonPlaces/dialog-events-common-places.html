@@ -1,0 +1,14 @@
+<div mat-dialog-title>
+  Schedule of Events
+</div>
+<full-calendar *ngIf="options" #fullcalendar [editable]="true" [events]="options.events" [header]="options.header"
+  [buttonIcons]="options.buttonIcons" [footer]="options.footer" [defaultView]="options.defaultView" (dateClick)="dateClick($event)" (eventDragStop)="eventDragStop($event)"
+  [plugins]="options.plugins" [themeSystem]="options.themeSystem" (eventClick)="eventClick($event)"></full-calendar>
+<div mat-dialog-content>
+  
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="addEvent()"> Add Event</button>
+  <button mat-button color="accent" (click)="onNoClick()">Cerrar</button>
+</div>

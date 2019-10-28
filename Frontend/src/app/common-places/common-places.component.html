@@ -1,0 +1,29 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div *ngIf="!hayCommonPlaces">
+      <mat-card *ngFor="let commonPlace of commonPlaces; let indice=index " class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{commonPlace.nombre}}</mat-card-title>
+          <mat-card-subtitle>Capacity of people: {{commonPlace.capacidadTotal}}</mat-card-subtitle>
+        </mat-card-header>
+        <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
+          <div class="carousel-inner">
+            <div *ngFor="let images of commonPlace.imagen; let primeroImg = first" data-interval="3000" [ngClass]="{active:primeroImg}" class="carousel-item">
+              <img mat-card-image src="{{images}}" class="d-block w-100" alt="Comedor foto 2">
+            </div>
+          </div>
+        </div> 
+        <!-- <img mat-card-image src="{{commonPlace.imagen}}" alt="Photo of a Common Place"> -->
+        <mat-card-content>
+          <p>
+            {{commonPlace.descripcion}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button (click)="openImplements(commonPlace.id)" mat-button>Implements</button>
+          <button (click)="openCalendarEvents(commonPlace.id)" mat-button>Schedule of Events</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

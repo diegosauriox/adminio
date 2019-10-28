@@ -1,0 +1,107 @@
+<div class="card">
+    <div class="card-header card-header-danger">
+        <h4 class="card-title">Add House</h4>
+        <p class="card-category">Formulario de ingreso</p>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header card-header-icon card-header-rose">
+                        <div class="card-icon">
+                            <i class="material-icons">house</i>
+                        </div>
+                        <h4 class="card-title">Identification</h4>
+                    </div>
+                    <div class="card-body">
+                        <mat-form-field>
+                            <input matInput placeholder="Input number...">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="Input name...">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header card-header-icon card-header-warning">
+                        <div class="card-icon">
+                            <i class="material-icons">description</i>
+                        </div>
+                        <h4 class="card-title">Caracteristicas</h4>
+                    </div>
+                    <div class="card-body">
+                            <table *ngIf="!isMobileMenu()" class="example-full-width" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <input style="font-weight: bold;" matInput value="Tamaño" disabled>
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <mat-form-field>
+                                            <input matInput [(ngModel)]="data.mtCuadrado" placeholder=" " required>
+                                            <span matSuffix>mts2</span>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr *ngFor="let property of properties" >
+                                    <td>
+                                        <mat-form-field>
+                                            <input matInput [(ngModel)]="property.name" [placeholder]="'Property '+(property.id+1)" required>
+                                        </mat-form-field>
+                                    </td>
+                                    <td>:</td>
+                                    <td>
+                                        <mat-form-field>
+                                            <input matInput [(ngModel)]="property.valor" [placeholder]="'Value '+(property.id+1)" required>
+                                            <mat-icon (click)="deleteProperty(property.id)"  matSuffix>close</mat-icon>
+                                        </mat-form-field>
+                                    </td>
+                                    <!-- <td>
+                                        <button mat-mini-fab color="secondary" (click)="deleteProperty(property.id)">
+                                            <i class="material-icons" >close</i>
+                                        </button>
+                                    </td> -->
+                                </tr>
+                                
+                            </table>
+                            <table *ngIf="isMobileMenu()" class="example-full-width" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <mat-form-field>
+                                            <input matInput [(ngModel)]="data.mtCuadrado" placeholder="Tamaño(mts2)" required>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <div *ngFor="let property of properties">
+                                    <tr>
+                                        <td>
+                                            <mat-form-field>
+                                                <input matInput [(ngModel)]="property.name" [placeholder]="'Property '+(property.id+1)" required>
+                                            </mat-form-field>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <mat-form-field>
+                                                <input matInput [(ngModel)]="property.valor" [placeholder]="'Value '+(property.id+1)" required>
+                                                <mat-icon (click)="deleteProperty(property.id)"  matSuffix>close</mat-icon>
+                                            </mat-form-field>
+                                        </td>
+                                    </tr>
+                                </div>
+                            </table>
+                            <button mat-mini-fab (click)="addProperty()" ><i class="material-icons">add</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <button class="btn btn-success col-md-3" >Add House</button>
+    <button class="btn btn-danger col-md-3" (click)="onNoClick()" >Cancel</button>
+    </div>
+</div>
