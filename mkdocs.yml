@@ -3,3 +3,9 @@ theme:
   name: 'material'
   language: es
   custom_dir: 'theme'
+nav:
+  - 'index.md'
+  - 'vision-objetivos-y-areas.md'
+  - 'historias-usuario-por-area.md'
+  - 'dse.md'
+  - 'seleccion-de-historias-usuario.md'
