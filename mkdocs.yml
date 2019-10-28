@@ -5,7 +5,9 @@ theme:
   custom_dir: 'theme'
 nav:
   - 'index.md'
+  - 'introduccion.md'
   - 'vision-objetivos-y-areas.md'
   - 'historias-usuario-por-area.md'
   - 'dse.md'
   - 'seleccion-de-historias-usuario.md'
+  - 'referencias.md'
