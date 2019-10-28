@@ -1,6 +1,6 @@
-# Proyect CondominiumApp
-## clonar repositorio
- git clone https://gitlab.com/alpha-teamPro/angularjs_condomio
+# Proyecto de Arquitectura Fronted
+##Requisitos
+Tener instalado nodejs y angular 8 
 ## install packages
 npm install
 ## Correr:
