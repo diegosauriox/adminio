@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  frontend:
+    build:
+      context: Frontend
+      dockerfile: Dockerfile
+    working_dir: /usr/src/frontend
+    volumes:
+      - ./Frontend/:/usr/src/frontend
+      - /usr/src/frontend/node_modules
+    ports:
+     - '4200:4200'
+    expose:
+     - '4200'
+    command: /bin/sh start.sh
