@@ -17,6 +17,7 @@ import { CommonPlacesModule } from './common-places/common-places.module';
 import {MatTooltipModule} from '@angular/material/tooltip'; 
 import { MatDialogModule } from '@angular/material';
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -34,7 +35,8 @@ import { MatDialogModule } from '@angular/material';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    SearchPipe
+    SearchPipe,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

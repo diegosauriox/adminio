@@ -1,0 +1,83 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="card">
+      <div  class="card-header card-header-danger">
+      <h2 class="card-title">Configuration</h2>
+      <span class="glyphicon glyphicon-cog"></span>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md">
+            <div class="card">
+                <div class="card-header card-header-icon card-header-warning">
+                    <div class="card-icon"><i class="material-icons">description</i></div>
+                    <h4 class="card-title">Gastos Comunes</h4></div>
+                    <div class="card-body">
+                        <table>
+                            <tr>
+                            <td width="270" ></td>
+                            <td width="300" >
+                            <h4>Dia de notificación:</h4>
+                            </td>
+                            <td>
+                            <span class="custom-dropdown">
+                            <select  class="form-control form-control-sm">
+                                <option *ngFor="let day of days,let i = index" 
+                                [value]="day" 
+                                [attr.selected] = "i == 0 ? true : null"
+                                >{{day}}
+                            </option>
+                          </select>
+                          </span>
+                        </td>
+                            </tr>
+                            <tr>
+                              <td width="270" ></td>
+                              <td width="300">
+                                <h4>Forma de distribución:</h4>
+                              </td>
+                              <td>
+                                <span class="custom-dropdown">
+                                  <select  class="form-control form-control-sm">
+                                      <option *ngFor="let form of forms,let i = index" 
+                                      [value]="form"
+                                      [attr.selected] = "i == 0 ? true : null" 
+                                      >{{form}}
+                                  </option>
+                                </select>
+                                </span>
+                              </td>
+                            </tr>
+                          </table>
+                    </div>
+            </div>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-md">
+          <div class="card">
+              <div class="card-header card-header-icon card-header-rose">
+                  <div class="card-icon"><i class="material-icons">house</i></div>
+                  <h4 class="card-title">Propietarios</h4></div>
+                  <div class="card-body">
+                      <table>
+                          <tr>
+                            <td width="270" ></td>
+                            <td width="300">
+                              <h4>Registrar cuenta de propietario:</h4>
+                            </td>
+                            <td>
+                              <button (click)="openAddOwner()" mat-button class="btn btn-primary btn-round">Registrar Propietario</button>
+                            </td>
+                          </tr>
+                        </table>                  
+                  </div>
+          </div>
+        </div>
+      </div>
+      <br><br>   
+        <button class="btn btn-success btn-round" margin="0px 400px" style="margin: 0px 400px;">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>

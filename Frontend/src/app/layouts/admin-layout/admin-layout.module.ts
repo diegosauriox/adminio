@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
+import { ConfigurationComponent} from '../../configuration/configuration.component';
 import {
   MatButtonModule,
   MatInputModule,
@@ -34,6 +35,7 @@ import { SpeedDialFabComponent } from 'app/speed-dial-fab/speed-dial-fab.compone
   declarations: [
     DashboardComponent,
     ListHousesComponent,
+    ConfigurationComponent,
     CommonPlacesComponent,
     SpeedDialFabComponent
   ]

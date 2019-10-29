@@ -11,6 +11,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
     { path: '/list-houses', title: 'List of houses',  icon:'house', class: '' },
     {path:'/common-places', title: 'Common Places',icon:'emoji_events',class:''},
+    {path:'/configuration',title:'Configuration',icon:'settings_applications',class:''}
 ];
 
 @Component({
