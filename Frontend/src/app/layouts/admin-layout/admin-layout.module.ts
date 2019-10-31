@@ -12,11 +12,14 @@ import {
   MatPaginatorModule,
   MatTableModule,
   MatDialogModule,
-  MatCardModule
+  MatCardModule,
+  MatCheckboxModule
 } from '@angular/material';
 import { ListHousesComponent } from '../../list-houses/list-houses.component';
 import { CommonPlacesComponent } from '../../common-places/common-places.component';
 import { SpeedDialFabComponent } from 'app/speed-dial-fab/speed-dial-fab.component';
+import { FormsModule } from '@angular/forms';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 @NgModule({
   imports: [
     CommonModule,
@@ -29,7 +32,11 @@ import { SpeedDialFabComponent } from 'app/speed-dial-fab/speed-dial-fab.compone
     MatPaginatorModule,
     MatTableModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    MatCheckboxModule,
+    FormsModule,
+    OwlDateTimeModule, 
+    OwlNativeDateTimeModule
   ],
   declarations: [
     DashboardComponent,

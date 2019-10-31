@@ -14,7 +14,7 @@ import { MatDialog } from '@angular/material';
     @Input() color: string;
     buttons = [];
     fabTogglerState = 'inactive';
-
+    algo: boolean = false;
     constructor(public dialog: MatDialog) { }
 
     ngOnInit(){
@@ -32,6 +32,21 @@ import { MatDialog } from '@angular/material';
     }
   onToggleFab() {
       this.buttons.length ? this.hideItems() : this.showItems();
+    }
+
+   private actions(value) {
+    
+      switch(value){
+        case 0:
+            this.buttons[value].action(this.dialog);
+            break;
+        case 1:
+            this.algo= this.buttons[value].action(this.algo);
+            break;
+        default:
+          this.buttons[value].action();
+      }
+      this.onToggleFab();
     }
   }
 

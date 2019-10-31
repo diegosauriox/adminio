@@ -15,7 +15,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { ListHousesModule } from './list-houses/list-houses.module';
 import { CommonPlacesModule } from './common-places/common-places.module';
 import {MatTooltipModule} from '@angular/material/tooltip'; 
-import { MatDialogModule } from '@angular/material';
+import { MatDialogModule} from '@angular/material';
 
 @NgModule({
   imports: [

@@ -3,18 +3,45 @@
 
     <div class="col-sm-6">
       <mat-form-field>
-        <input matInput  (keyup)="applyFilter($event.target.value)" placeholder="Search house...">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search house...">
       </mat-form-field>
     </div>
 
     <div class="table-responsive-md">
 
       <table mat-table [dataSource]="dataSource" class="table table-borderless">
-
+        <!-- Position Column -->
+        <!-- <ng-container matColumnDef="checked">
+          <mat-header-cell *matHeaderCellDef>
+            <mat-checkbox *ngIf="speed.algo" [(ngModel)]="checkedSelect" [(ngModel)]="masterChecked" (change)="allCheckboxPage(masterChecked)" class="example-margin" 
+                labelPosition="afer" disabled="false">
+              </mat-checkbox>
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <mat-checkbox *ngIf="speed.algo" [(ngModel)]="element.checked"></mat-checkbox>
+          </mat-cell>
+        </ng-container> -->
         <!-- Position Column -->
         <ng-container matColumnDef="position">
-          <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          <th mat-header-cell *matHeaderCellDef>
+              <div *ngIf="speed.algo">
+                  <mat-checkbox #checkbox1 [(ngModel)]="masterChecked" (change)="allCheckboxPage(masterChecked)" class="example-margin" [indeterminate]="indeterCheckbox1"
+                    labelPosition="afer" disabled="false">
+                    No.
+                  </mat-checkbox>
+                </div> 
+                <div *ngIf="!speed.algo"> No. </div> 
+            
+          </th>
+           <td mat-cell *matCellDef="let element">
+            <div *ngIf="speed.algo">
+              <mat-checkbox [(ngModel)]="element.checked" (change)="addHouseDelete()" class="example-margin" [indeterminate]="false"
+                labelPosition="afer" disabled="false">
+                {{element.position}}
+              </mat-checkbox>
+            </div> 
+            <div *ngIf="!speed.algo"> {{element.position}} </div> 
+          </td> 
         </ng-container>
 
         <!-- Name Column -->
@@ -41,8 +68,12 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
 
-      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
     </div>
-    <app-speed-dial-fab color='primary' [fabButtons]="fabButtons"></app-speed-dial-fab>
+    <app-speed-dial-fab #speed color='primary' [fabButtons]="fabButtons"></app-speed-dial-fab>
+    <div *ngIf="speed.algo">
+      <button class="btn btn-danger" (click)="deleteHouses()"><i class="material-icons">delete</i> Delete</button>
+      <button class="btn btn-warning" (click)="cancelDelete(speed.algo  = false, masterChecked = false)"><i class="material-icons">cancel</i> Cancel</button>
+    </div>
   </div>
 </div>

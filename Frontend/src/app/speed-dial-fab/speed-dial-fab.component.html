@@ -9,11 +9,11 @@
   </button>
     
   <div [@speedDialStagger]="buttons.length"> <!-- and here -->
-    <button  *ngFor="let btn of buttons"
+    <button  *ngFor="let btn of buttons; let i = index;"
             mat-mini-fab
             class="fab-secondary"
             [color]="color"
-            (click)="btn.action(dialog)"
+            (click)="actions(i)"
            [matTooltip]="btn.name"
            [matTooltipPosition]="'before'"
             >

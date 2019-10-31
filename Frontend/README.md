@@ -1,5 +1,5 @@
 # Proyecto de Arquitectura Fronted
-##Requisitos
+## Requisitos
 Tener instalado nodejs y angular 8 
 ## install packages
 npm install

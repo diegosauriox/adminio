@@ -6,6 +6,7 @@ import { DialogHouseCommonExpenses } from './DialogHouseCommonExpenses/dialog-ho
 import { MatButtonModule, MatCardModule, MatInputModule, MatDialogModule, MatIconModule } from '@angular/material';
 import { DialogAddHouseComponent } from './DialogAddHouse/dialog-add-house.component';
 import { FormsModule } from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
       MatInputModule,
       MatDialogModule,
       MatIconModule,
-      FormsModule
+      FormsModule,
+      MatCheckboxModule
     ],
     declarations: [
         DialogOverviewHouseDetails,
