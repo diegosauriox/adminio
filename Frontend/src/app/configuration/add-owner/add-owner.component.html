@@ -1,3 +1,84 @@
-<p>
-  add-owner works!
-</p>
+<div class="card">
+  <div class="card-header card-header-danger">
+      <h4 class="card-title">Registrar propietario</h4>
+      <p class="card-category">Formulario de ingreso</p>
+  </div>
+  <div class="card-body">
+      <div class="row">
+          <div class="col-md">
+              <div class="card">
+                  <div class="card-header card-header-icon card-header-primary">
+                      <div class="card-icon">
+                          <i class="material-icons">person_outline</i>
+                      </div>
+                      <h4 class="card-title">Datos propietario</h4>
+                  </div>
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-5">
+                      <mat-form-field>
+                          <input  matInput placeholder="Nombre de usuario">
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-5">
+                      <mat-form-field>
+                        <input matInput placeholder="Correo">
+                    </mat-form-field>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <mat-form-field>
+                            <input matInput placeholder="Nombre Propietario">
+                        </mat-form-field>
+                    </div>
+                <div class="col-md-5">
+                    <mat-form-field>
+                      <input matInput placeholder="Apellido Propietario">
+                  </mat-form-field>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                    <mat-form-field>
+                        <input type="password" matInput placeholder="Contraseña">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-5">
+                      <mat-form-field>
+                          <input type="password" matInput placeholder="Confirmar Contraseña">
+                      </mat-form-field>
+                    </div>
+                    </div>
+
+                      <table>
+                        <tr>
+                          <td width="150">
+                            <h4>Propiedades:</h4>
+                          </td>
+                          <td>
+                              <span class="custom-dropdown">
+                                  <select  class="form-control form-control-sm">
+                                      <option *ngFor="let propertie of properties,let i = index" 
+                                      [value]="propertie"
+                                      [attr.selected] = "i == 0 ? true : null" 
+                                      >{{propertie}}
+                                  </option>
+                                </select>
+                                </span>
+                          </td>
+                          <td>
+                              <button mat-button class="btn btn-primary btn-round">Agregar Propiedad</button>
+                          </td>
+                        </tr>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+      <div class="row-fluid">
+          <button class="btn btn-danger btn-round col-md-3" (click)="onNoClick()" >Cancelar</button>
+        <button class="btn btn-success btn-round col-md-3" >Registrar </button>
+    </div>
+    </div>
