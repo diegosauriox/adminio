@@ -16,6 +16,7 @@ import { ListHousesModule } from './list-houses/list-houses.module';
 import { CommonPlacesModule } from './common-places/common-places.module';
 import {MatTooltipModule} from '@angular/material/tooltip'; 
 import { MatDialogModule} from '@angular/material';
+import { ConfigurationModule } from './configuration/configuration.module';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { MatDialogModule} from '@angular/material';
     RouterModule,
     AppRoutingModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    ConfigurationModule
   ],
   declarations: [
     AppComponent,

@@ -1,0 +1,65 @@
+<div class="card">
+    <div class="card-header card-header-icon card-header-primary">
+        <div class="card-icon">
+            <i class="material-icons">person_outline</i>
+        </div>
+        <h4 class="card-title">Propietario</h4>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field>
+                    <input #inputUser matInput placeholder="Nombre de usuario" [disabled]="enabled">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field>
+                    <input #inputEmail matInput placeholder="Correo" [disabled]="enabled">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field>
+                    <input #inputName matInput placeholder="Nombre completo" [disabled]="enabled" >
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field>
+                    <input #inputApe matInput placeholder="Apellidos" [disabled]="enabled">
+                </mat-form-field>
+            </div>
+        </div>
+        <div *ngIf="!editable" class="row">
+            <div class="col-md-6">
+                <mat-form-field>
+                    <input type="password" matInput placeholder="Contraseña" [disabled]="enabled">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field>
+                    <input type="password" matInput placeholder="Confirmar Contraseña" [disabled]="enabled">
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-1 col-md-3">
+                <mat-chip-list>
+                        <mat-chip *ngIf="enabled" color="accent" (click)="onNoClick()" selected>Cerrar</mat-chip>
+                        <mat-chip *ngIf="!enabled" color="accent" (click)="enabled = true" selected>Cancelar</mat-chip>
+                </mat-chip-list>
+            </div>
+            <div class="col-10 col-md-9">
+                <mat-chip-list>
+                    <mat-chip *ngIf="enabled" color="primary" (click)="enabled =  updatedEnabled(enabled)" selected>  Editar Propietario</mat-chip>
+                    <mat-chip *ngIf="enabled" style="background-color: red" >Eliminar Propietario</mat-chip>
+                    <mat-chip *ngIf="!enabled" color="primary" selected> Guardar Cambios</mat-chip>
+                </mat-chip-list>
+            </div>
+            <div class="col-1 col-md">
+            </div>
+        </div>
+    </div>
+</div>

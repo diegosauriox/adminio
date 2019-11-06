@@ -24,24 +24,24 @@
         <!-- Position Column -->
         <ng-container matColumnDef="position">
           <th mat-header-cell *matHeaderCellDef>
-              <div *ngIf="speed.algo">
-                  <mat-checkbox #checkbox1 [(ngModel)]="masterChecked" (change)="allCheckboxPage(masterChecked)" class="example-margin" [indeterminate]="indeterCheckbox1"
-                    labelPosition="afer" disabled="false">
-                    No.
-                  </mat-checkbox>
-                </div> 
-                <div *ngIf="!speed.algo"> No. </div> 
-            
-          </th>
-           <td mat-cell *matCellDef="let element">
             <div *ngIf="speed.algo">
-              <mat-checkbox [(ngModel)]="element.checked" (change)="addHouseDelete()" class="example-margin" [indeterminate]="false"
-                labelPosition="afer" disabled="false">
+              <mat-checkbox #checkbox1 [(ngModel)]="masterChecked" (change)="allCheckboxPage(masterChecked)"
+                class="example-margin" [indeterminate]="indeterCheckbox1" labelPosition="afer" disabled="false">
+                No.
+              </mat-checkbox>
+            </div>
+            <div *ngIf="!speed.algo"> No. </div>
+
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="speed.algo">
+              <mat-checkbox [(ngModel)]="element.checked" (change)="addHouseDelete()" class="example-margin"
+                [indeterminate]="false" labelPosition="afer" disabled="false">
                 {{element.position}}
               </mat-checkbox>
-            </div> 
-            <div *ngIf="!speed.algo"> {{element.position}} </div> 
-          </td> 
+            </div>
+            <div *ngIf="!speed.algo"> {{element.position}} </div>
+          </td>
         </ng-container>
 
         <!-- Name Column -->
@@ -52,28 +52,45 @@
 
         <!-- Weight Column -->
         <ng-container matColumnDef="action1">
-          <th mat-header-cell *matHeaderCellDef> Details </th>
-          <td mat-cell *matCellDef="let element"> <button (click)="clickShowDetailsHouse(element.position)"
-              color="primary" mat-button> Details</button> </td>
+          <th style="text-align: center" mat-header-cell *matHeaderCellDef> Opciones </th>
+          <td  mat-cell *matCellDef="let element">
+            <button class="col-2 col-md-4" (click)="clickShowDetailsHouse(element.position)" color="primary" mat-button>
+             <i class="material-icons">assignment</i> <div *ngIf="!isMobileMenu()" >Details</div>
+            </button>
+            <button class="col-2 col-md-4" (click)="clickShowCommonExpensesHouse(element.position)" color="accent" mat-button>
+               <i class="material-icons">attach_money</i> <div *ngIf="!isMobileMenu()" >Common Expenses</div>
+              </button>
+              <button class="col-2 col-md-4" (click)="clickShowHomeOwner(element.propietario)" color="danger" mat-button>
+                 <i class="material-icons">person</i> <div *ngIf="!isMobileMenu()" > See Homeowner</div>
+                </button>
+          </td>
         </ng-container>
 
         <!-- Symbol Column -->
-        <ng-container matColumnDef="action2">
+        <!-- <ng-container matColumnDef="action2">
           <th mat-header-cell *matHeaderCellDef> Common Expenses </th>
-          <td mat-cell *matCellDef="let element"> <button (click)="clickShowCommonExpensesHouse(element.position)"
-              color="accent" mat-button>Common Expenses</button> </td>
+          <td mat-cell *matCellDef="let element">
+            
+          </td>
         </ng-container>
+        <ng-container matColumnDef="action3">
+          <th mat-header-cell *matHeaderCellDef> Common Expenses </th>
+          <td mat-cell *matCellDef="let element">
+            
+          </td>
+        </ng-container> -->
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
 
-      <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      <mat-paginator class="col" #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
     </div>
     <app-speed-dial-fab #speed color='primary' [fabButtons]="fabButtons"></app-speed-dial-fab>
     <div *ngIf="speed.algo">
       <button class="btn btn-danger" (click)="deleteHouses()"><i class="material-icons">delete</i> Delete</button>
-      <button class="btn btn-warning" (click)="cancelDelete(speed.algo  = false, masterChecked = false)"><i class="material-icons">cancel</i> Cancel</button>
+      <button class="btn btn-warning" (click)="cancelDelete(speed.algo  = false, masterChecked = false)"><i
+          class="material-icons">cancel</i> Cancel</button>
     </div>
   </div>
 </div>

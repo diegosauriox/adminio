@@ -13,13 +13,18 @@ import {
   MatTableModule,
   MatDialogModule,
   MatCardModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatSelectModule,
+  MatChipsModule
 } from '@angular/material';
 import { ListHousesComponent } from '../../list-houses/list-houses.component';
 import { CommonPlacesComponent } from '../../common-places/common-places.component';
 import { SpeedDialFabComponent } from 'app/speed-dial-fab/speed-dial-fab.component';
 import { FormsModule } from '@angular/forms';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ConfigurationComponent } from 'app/configuration/configuration.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -35,14 +40,19 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     MatCardModule,
     MatCheckboxModule,
     FormsModule,
-    OwlDateTimeModule, 
-    OwlNativeDateTimeModule
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
+    MatSelectModule,
+    MatChipsModule,
+    NgbModule
   ],
   declarations: [
     DashboardComponent,
     ListHousesComponent,
     CommonPlacesComponent,
-    SpeedDialFabComponent
+    SpeedDialFabComponent,
+    ConfigurationComponent
+  ], entryComponents: [
   ]
 })
 export class AdminLayoutModule {}

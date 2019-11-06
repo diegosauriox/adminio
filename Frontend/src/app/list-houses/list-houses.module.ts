@@ -3,10 +3,18 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DialogOverviewHouseDetails } from './DialogOverviewHouseDetails/dialog-overview-house-details.component';
 import { DialogHouseCommonExpenses } from './DialogHouseCommonExpenses/dialog-house-common-expenses.component';
-import { MatButtonModule, MatCardModule, MatInputModule, MatDialogModule, MatIconModule } from '@angular/material';
+import { MatButtonModule,
+         MatSelectModule,
+         MatCardModule,
+         MatInputModule,
+         MatDialogModule,
+         MatIconModule,
+         MatChipsModule } from '@angular/material';
 import { DialogAddHouseComponent } from './DialogAddHouse/dialog-add-house.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { DialogAddHomeOwnerComponent } from './DialogAddHomeOwner/dialog-add-homeowner.component';
+import { DialogSeeHomeOwnerComponent } from './DialogSeeHomeowner/dialog-seehomeowner.component';
 
 @NgModule({
     imports: [
@@ -18,22 +26,31 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
       MatDialogModule,
       MatIconModule,
       FormsModule,
-      MatCheckboxModule
+      MatCheckboxModule,
+      MatSelectModule,
+      ReactiveFormsModule,
+      MatChipsModule
     ],
     declarations: [
         DialogOverviewHouseDetails,
         DialogHouseCommonExpenses,
-        DialogAddHouseComponent
+        DialogAddHouseComponent,
+        DialogAddHomeOwnerComponent,
+        DialogSeeHomeOwnerComponent
     ],
     exports: [
         DialogOverviewHouseDetails,
         DialogHouseCommonExpenses,
-        DialogAddHouseComponent
+        DialogAddHouseComponent,
+        DialogAddHomeOwnerComponent,
+        DialogSeeHomeOwnerComponent
     ],
     entryComponents: [
         DialogOverviewHouseDetails,
         DialogHouseCommonExpenses,
-        DialogAddHouseComponent
+        DialogAddHouseComponent,
+        DialogAddHomeOwnerComponent,
+        DialogSeeHomeOwnerComponent
     ]
   })
 

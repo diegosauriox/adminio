@@ -1,6 +1,8 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { HouseDetails } from '../list-houses.component';
+import { FormControl, Validators } from '@angular/forms';
+import { DialogAddHomeOwnerComponent } from '../DialogAddHomeOwner/dialog-add-homeowner.component';
 
 @Component({
     selector: 'app-dialog-add-house',
@@ -9,10 +11,20 @@ import { HouseDetails } from '../list-houses.component';
 
 export class DialogAddHouseComponent {
 
+  title: string;
+  subtitle: string;
+  titleButton: string;
+
   properties: Property[] = [] ;
+  ownerControl = new FormControl('', [Validators.required]);
     constructor(
         public dialogRef: MatDialogRef<DialogAddHouseComponent>,
-        @Inject(MAT_DIALOG_DATA) public data: HouseDetails) {}
+        @Inject(MAT_DIALOG_DATA) public data: any,
+        public dialog: MatDialog) {
+          this.title = data.title;
+          this.subtitle = data.subtitle;
+          this.titleButton = data.titleButton;
+        }
 
       onNoClick(): void {
         this.dialogRef.close();
@@ -47,6 +59,12 @@ export class DialogAddHouseComponent {
         }
         return true;
     };
+
+    openAddHomeOwner(){
+      const dialogRef = this.dialog.open(DialogAddHomeOwnerComponent, {
+        data: {}
+      })
+    }
 }
 
 export interface Property {
