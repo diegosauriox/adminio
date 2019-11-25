@@ -39,7 +39,7 @@ export class CommonPlacesComponent implements OnInit {
   }
   openCalendarEvents(id: number) {
     const dialogRef = this.dialog.open(DialogEventsCommonPlaces, {
-      width:'600px',
+      width:'700px',
       height: '500px',
       data: {
         events: commonPlaces[id-1].schedules, houses: ELEMENT_DATA

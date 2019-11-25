@@ -39,13 +39,9 @@ export class DialogEventsCommonPlaces {
     this.options = {
       editable: true,
       header: {
-        left: 'prev',
-        center: 'title',
-        right: 'next'
-      }, footer: {
-        left: 'dayGridMonth',
-        center: 'today',
-        right: 'timeGridWeek,listWeek'
+        left: 'title',
+        center: 'dayGridMonth,timeGridWeek,listWeek',
+        right: 'prev,next,today'
       },
       buttonIcons: {
         prev: 'fa-chevron-left',

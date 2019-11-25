@@ -15,8 +15,9 @@ import { SearchPipe } from './pipes/search.pipe';
 import { ListHousesModule } from './list-houses/list-houses.module';
 import { CommonPlacesModule } from './common-places/common-places.module';
 import {MatTooltipModule} from '@angular/material/tooltip'; 
-import { MatDialogModule} from '@angular/material';
+import { MatDialogModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule} from '@angular/material';
 import { ConfigurationModule } from './configuration/configuration.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -31,12 +32,17 @@ import { ConfigurationModule } from './configuration/configuration.module';
     AppRoutingModule,
     MatTooltipModule,
     MatDialogModule,
-    ConfigurationModule
+    ConfigurationModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    SearchPipe
+    SearchPipe,
+    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

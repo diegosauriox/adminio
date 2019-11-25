@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ConfigurationComponent } from 'app/configuration/configuration.component';
+import { LoginComponent } from 'app/login/login.component';
 
 @NgModule({
   imports: [
