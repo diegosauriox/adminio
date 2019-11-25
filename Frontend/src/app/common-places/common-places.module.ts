@@ -12,10 +12,14 @@ import {
   MatSelectModule,
   MatButtonModule,
   MatInputModule,
-  MatDialogModule
+  MatDialogModule,
+  MatTooltipModule
 } from '@angular/material';
+import { ImageUploadModule } from "angular2-image-upload";
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogAddCommonPlaceComponent } from './DialogAddCommonPlace/dialog-add-common-place.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   imports: [
     CommonModule,
@@ -31,22 +35,28 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule,
+    ImageUploadModule.forRoot(),
+    HttpClientModule
   ],
   declarations: [
     DialogImplementsCommonPlaces,
     DialogEventsCommonPlaces,
-    AddEventDialog
+    AddEventDialog,
+    DialogAddCommonPlaceComponent
   ],
   exports: [
     DialogImplementsCommonPlaces,
     DialogEventsCommonPlaces,
-    AddEventDialog
+    AddEventDialog,
+    DialogAddCommonPlaceComponent
   ],
   entryComponents: [
     DialogImplementsCommonPlaces,
     DialogEventsCommonPlaces,
-    AddEventDialog
+    AddEventDialog,
+    DialogAddCommonPlaceComponent
   ]
 })
 export class CommonPlacesModule {}

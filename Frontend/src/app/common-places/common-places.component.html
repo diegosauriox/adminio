@@ -6,13 +6,24 @@
           <mat-card-title>{{commonPlace.nombre}}</mat-card-title>
           <mat-card-subtitle>Capacity of people: {{commonPlace.capacidadTotal}}</mat-card-subtitle>
         </mat-card-header>
-        <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
+        <!-- <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
           <div class="carousel-inner">
             <div *ngFor="let images of commonPlace.imagen; let primeroImg = first" data-interval="3000" [ngClass]="{active:primeroImg}" class="carousel-item">
               <img mat-card-image src="{{images}}" class="d-block w-100" alt="Comedor foto 2">
             </div>
           </div>
-        </div> 
+        </div>  -->
+        <ngb-carousel *ngIf="commonPlace.imagen">
+          <ng-template ngbSlide *ngFor="let images of commonPlace.imagen">
+            <div class="picsum-img-wrapper">
+              <img [src]="images" alt="Random first slide" style="width:1000px;height:600px;">
+            </div>
+            <!-- <div class="carousel-caption">
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div> -->
+          </ng-template>
+        </ngb-carousel>
         <!-- <img mat-card-image src="{{commonPlace.imagen}}" alt="Photo of a Common Place"> -->
         <mat-card-content>
           <p>

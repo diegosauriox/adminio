@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material';
 import { DialogImplementsCommonPlaces } from './DialogImplementsCommonPlaces/dialog-implements-common-places.component';
 import { DialogEventsCommonPlaces } from './DialogEventsCommonPlaces/dialog-events-common-places.component';
 import { HouseDetails } from '../list-houses/list-houses.component';
+import { DialogAddCommonPlaceComponent } from './DialogAddCommonPlace/dialog-add-common-place.component';
 
 @Component({
   selector: 'app-common-places',
@@ -19,6 +20,13 @@ export class CommonPlacesComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+    const dialogRef = this.dialog.open(DialogAddCommonPlaceComponent, {
+      width: '500px',
+      height: '600px',
+      data: {
+        
+      }
+    })
   }
 
   openImplements(id: number){
