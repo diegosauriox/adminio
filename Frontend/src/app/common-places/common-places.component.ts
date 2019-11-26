@@ -21,8 +21,8 @@ export class CommonPlacesComponent implements OnInit {
 
   ngOnInit() {
     const dialogRef = this.dialog.open(DialogAddCommonPlaceComponent, {
-      width: '500px',
-      height: '600px',
+      width: '600px',
+      height: '500px',
       data: {
         
       }

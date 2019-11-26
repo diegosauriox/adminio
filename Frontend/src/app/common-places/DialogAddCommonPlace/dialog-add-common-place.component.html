@@ -1,22 +1,78 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h3>Choose File</h3>
-            <input class="btn-success"[disabled]="images.length > 5" type="file" name="image" (change)="fileProgress($event)" />
-            <div *ngIf="fileUploadProgress">
-                Upload progress: {{ fileUploadProgress }}
-            </div>
-            <div class="row image-preview mb-3" *ngIf="previewUrl">
-                <img *ngFor="let image of images"  (click)="onImagen()" matTooltip="click imagen for delete" [src]="image" height="100px" width="100px" />                 
-            </div>
- 
-            <div class="mb-3" *ngIf="uploadedFilePath">
-                {{uploadedFilePath}}
-            </div>
-             
-            <div class="form-group">
-                <button class="btn btn-primary"  (click)="onSubmit()">Submit</button>
-            </div>
-        </div>
-    </div>
+    <mat-card fxFlex="500px" fxFlex.xs="100%">
+        <mat-card-title class="offset-md-2 mb-4">Create a new common place</mat-card-title>
+        <form [formGroup]="formAddCommonPlace" autocomplete="off" novalidate
+            (ngSubmit)="createCommonPlace(ownerForm.value)">
+            <mat-card-content>
+                <div class="row offset-md-2">
+                    <mat-form-field class="mr-2">
+                        <input matInput placeholder="nombre" formControlName="nombre" name="nombre" required>
+                        <mat-hint align="end"> Ingrese su nombre completo </mat-hint>
+                        <mat-error *ngIf="hasError('nombre','required')">Nombre es requerido</mat-error>
+                        <mat-error *ngIf="hasError('nombre','maxlength')">Tienes mas de 25 caracteres</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput type="number" name="cantidadPersona" id="cant"
+                            placeholder="cantidad de personas" min="1" formControlName="cantidad">
+                        <mat-error *ngIf="hasError('cantidad','required')">El campo es requerido y numerico</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="row offset-md-2">
+                    <mat-form-field class="col-md-11 pl-0 pr-3">
+                        <textarea #message formControlName="descripcion" required rows="6" matInput maxlength="255"
+                            placeholder="Descripcion del lugar"></textarea>
+                        <mat-hint align="start"><strong>Ingrese un resumen de descripción</strong> </mat-hint>
+                        <mat-hint align="end">{{message.value.length}} / 255</mat-hint>
+                        <mat-error *ngIf="hasError('descripcion','required')">Descripcion es requerido</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 offset-md-2 pr-0 mb-4">
+                        <h4>Seleccionar imagenes del lugar(max 3)</h4>
+                        <input [disabled]="images.length > 2" type="file" name="image" (change)="fileProgress($event)"
+                            accept="image/png, image/jpeg" />
+                        <div *ngIf="fileUploadProgress">
+                            Upload progress: {{ fileUploadProgress }}
+                        </div>
+                        <div class="row image-preview mb-3 ml-1 mt-1" *ngIf="previewUrl">
+                            <img class="mr-2" *ngFor="let image of images" (click)="onImagen()"
+                                matTooltip="click imagen for delete" [src]="image" height="100px" width="100px"
+                                style="color: transparent" />
+                        </div>
+                        <div class="mb-3" *ngIf="uploadedFilePath">
+                            {{uploadedFilePath}}
+                        </div>
+                    </div>
+                </div>
+                <h4 class="offset-md-2">
+                    Implementos
+                </h4>
+                <table  class="ml-5 offset-md-2 example-full-width" cellspacing="0">
+                    <tr *ngFor="let implement of implements" >
+                        <td>
+                            <mat-form-field>
+                                <input matInput  [placeholder]="'Implement '+(implement.id)" required>
+                            </mat-form-field>
+                        </td>
+                        <td>:</td>
+                        <td>
+                            <mat-form-field>
+                                <input matInput  placeholder="Cantidad" required>
+                                <mat-icon (click)="deleteImplement(implement.id)"  matSuffix>close</mat-icon>
+                            </mat-form-field>
+                        </td>
+                        <!-- <td>
+                            <button mat-mini-fab color="secondary" (click)="deleteProperty(property.id)">
+                                <i class="material-icons" >close</i>
+                            </button>
+                        </td> -->
+                    </tr>
+                    
+                </table>
+                <div class="offset-md-2">
+                    <button  mat-mini-fab (click)="addImplement()" ><i class="material-icons">add</i></button>
+                </div>
+            </mat-card-content>
+        </form>
+    </mat-card>
 </div>

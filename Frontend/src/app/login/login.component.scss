@@ -13,7 +13,8 @@
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-*/@keyframes spin {
+*/
+@keyframes spin {
 from {
 -webkit-transform:rotate(0);
 transform:rotate(0)
@@ -37,7 +38,8 @@ Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 Copyright (c) 2015 Daniel Eden
-*/.animated {
+*/
+.animated {
 -webkit-animation-duration:1s;
 animation-duration:1s;
 -webkit-animation-fill-mode:both;

@@ -13,7 +13,8 @@ import {
   MatButtonModule,
   MatInputModule,
   MatDialogModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatCardModule
 } from '@angular/material';
 import { ImageUploadModule } from "angular2-image-upload";
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatDialogModule,
     MatTooltipModule,
+    MatCardModule,
     ImageUploadModule.forRoot(),
     HttpClientModule
   ],
