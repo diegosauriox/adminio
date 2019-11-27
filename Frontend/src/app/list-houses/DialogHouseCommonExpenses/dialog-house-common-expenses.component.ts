@@ -1,6 +1,8 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 import { CommonExpenses } from "../list-houses.component";
+import { Router } from "@angular/router";
+import { state } from "@angular/animations";
 
 @Component({
     selector: 'dialog-house-common-expenses',
@@ -10,13 +12,19 @@ import { CommonExpenses } from "../list-houses.component";
 export class DialogHouseCommonExpenses implements OnInit{
     constructor(
         public dialogRef: MatDialogRef<DialogHouseCommonExpenses>,
-        @Inject(MAT_DIALOG_DATA) public data: any) {}
+        @Inject(MAT_DIALOG_DATA) public data: any,
+        public route: Router) {}
     
         ngOnInit(){
             console.log(this.data);
         }
       onNoClick(): void {
         this.dialogRef.close();
+      }
+
+      payTotal(){
+        this.dialogRef.close();
+        this.route.navigate(['payment'],{state: this.data});
       }
       
 }
