@@ -2,7 +2,7 @@
     <mat-card fxFlex="500px" fxFlex.xs="100%">
         <mat-card-title class="offset-md-2 mb-4">Create a new common place</mat-card-title>
         <form [formGroup]="formAddCommonPlace" autocomplete="off" novalidate
-            (ngSubmit)="createCommonPlace(ownerForm.value)">
+            (ngSubmit)="createCommonPlace(formAddCommonPlace.value)">
             <mat-card-content>
                 <div class="row offset-md-2">
                     <mat-form-field class="mr-2">

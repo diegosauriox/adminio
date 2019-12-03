@@ -13,7 +13,6 @@ export class PaymentComponent implements OnInit {
   elements: Elements;
   @ViewChild(StripeCardComponent,{static:true}) card: StripeCardComponent;
   totalPagar: number = 0;
-  object: any;
   // optional parameters
   elementsOptions: ElementsOptions = {
     locale: 'es'
@@ -50,11 +49,7 @@ export class PaymentComponent implements OnInit {
     this.stripeTest = this.fb.group({
       name: ['', [Validators.required]]
     });
-    this.object = history.state;
-    console.log(this.object);
-    for(let i =0; i<this.object.commonExpenses.length; i++){
-      this.totalPagar += this.object.commonExpenses[i].mount;
-    }
+    this.totalPagar = history.state.mount;
   }
  
   buy() {

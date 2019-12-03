@@ -1,10 +1,26 @@
 <h1 mat-dialog-title>Common Expenses of {{data.name}}</h1>
 <div mat-dialog-content>
-
-    <ul *ngFor="let expense of data.commonExpenses"  >
-        <li > {{expense.title}} : {{expense.mount | currency: '$' | lowercase}}</li>
-    </ul>
-
+  <input mat-button type="file" name="imgen" id="imagen">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Gasto</th>
+        <th scope="col">Monto</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let expense of data.commonExpenses">
+        <td>{{expense.title}}</td>
+        <td>{{expense.mount | currency: '$' | lowercase}}</td>
+        <td><button mat-button (click)="payMount(expense.mount)">Pagar</button></td>
+      </tr>
+      <tr>
+        <th scope="row">Total</th>
+        <td>{{total | currency:'$' | lowercase}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <div mat-dialog-actions>
   <button style="align-content: center" mat-button color="accent" (click)="onNoClick()">Cerrar</button>
