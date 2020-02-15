@@ -1,11 +1,11 @@
 <h1 mat-dialog-title>Common Expenses of {{data.name}}</h1>
 <div mat-dialog-content>
-  <input mat-button type="file" name="imgen" id="imagen">
   <table class="table">
     <thead>
       <tr>
         <th scope="col">Gasto</th>
         <th scope="col">Monto</th>
+        <th scope="col">Documento</th>
         <th></th>
       </tr>
     </thead>
@@ -13,6 +13,22 @@
       <tr *ngFor="let expense of data.commonExpenses">
         <td>{{expense.title}}</td>
         <td>{{expense.mount | currency: '$' | lowercase}}</td>
+        <td style="align-items: center;">
+          <button *ngIf="false" mat-icon-button color="accent" (click)="fileInput.click()" matTooltip="Subir documento de gasto"
+          aria-label="Button that uppload document">
+            <mat-icon>archive</mat-icon>
+            <input #fileInput type="file" (change)="onFileInput($event)" style="display:none;" />
+          </button>
+          <div *ngIf="true" id="opciones">
+            <button color="primary" matTooltip="Ver documento" mat-icon-button>
+              <mat-icon>attach_file</mat-icon>
+              <a target="_blank" href="www.google.com" ></a>
+            </button>
+            <button color="accent" mat-icon-button>
+              <mat-icon>delete</mat-icon>
+            </button>            
+          </div>
+        </td>
         <td><button mat-button (click)="payMount(expense.mount)">Pagar</button></td>
       </tr>
       <tr>

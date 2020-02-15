@@ -9,7 +9,8 @@ import { MatButtonModule,
          MatInputModule,
          MatDialogModule,
          MatIconModule,
-         MatChipsModule } from '@angular/material';
+         MatChipsModule,
+        MatTooltipModule } from '@angular/material';
 import { DialogAddHouseComponent } from './DialogAddHouse/dialog-add-house.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -29,7 +30,8 @@ import { DialogSeeHomeOwnerComponent } from './DialogSeeHomeowner/dialog-seehome
       MatCheckboxModule,
       MatSelectModule,
       ReactiveFormsModule,
-      MatChipsModule
+      MatChipsModule,
+      MatTooltipModule
     ],
     declarations: [
         DialogOverviewHouseDetails,

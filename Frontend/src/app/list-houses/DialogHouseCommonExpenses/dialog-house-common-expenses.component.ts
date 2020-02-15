@@ -33,4 +33,8 @@ export class DialogHouseCommonExpenses implements OnInit{
         this.dialogRef.close();
         this.route.navigate(['payment'],{state: {'mount': mount}})
       }
+
+      onFileInput(event) {
+        console.log(event);
+      }
 }

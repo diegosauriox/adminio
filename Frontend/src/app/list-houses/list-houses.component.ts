@@ -136,7 +136,7 @@ export class ListHousesComponent implements OnInit, OnChanges {
 
   clickShowCommonExpensesHouse(position: number){
     const dialogRef = this.dialog.open(DialogHouseCommonExpenses, {
-      width: '300px',
+      width: '600px',
       data: {name: ELEMENT_DATA[position-1].name,commonExpenses: ELEMENT_DATA[position-1].commonExpenses}
     });
   }
